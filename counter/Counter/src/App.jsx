@@ -4,7 +4,8 @@ function App() {
    const [counter , setCounter] = useState(15)
 
    const addValue =() =>{
-       setCounter(prevCounter => prevCounter + 1)
+       setCounter(prevCounter => prevCounter + 1)  // ye prevCounter ka name aap kuch bhi de sakte ho ye bas ek tarika hai 
+       // ye ek tarika hai aur ek tarika niche bhi hai waise bhi kar sakte hai
 
    }
 
