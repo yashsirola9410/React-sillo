@@ -1,6 +1,12 @@
+// dekho iss project mai akhir ho kya raha hai 
+//4 hook hamne use kiye 
+// humko password generate karna vo bhi har time ham kuch bhi action kare to password change ho jayee 
+//
+
+
 import {useState , useCallback , useEffect , useRef} from 'react'
 
-function App() {
+function App() {             // hamne yahan par useState ko use kiya taki ham password ki value change kar sake 
     const [length , setLength] = useState(8)
     const [numberAllowed , setNumberAllowed] = useState(false);
     const [charAllowed , setCharAllowed] = useState(false)
@@ -10,23 +16,26 @@ function App() {
     const passwordRef = useRef(null)
     
     //usesCallback hook
-    const passwordGenerator = useCallback(() =>{
-      let pass = ""
-      let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-      if(numberAllowed) str += "0123456789"
+    //By wrapping it in useCallback, the function is only re-created when one of its dependencies (length, numberAllowed, charAllowed, or setPassword) changes.
+    const passwordGenerator = useCallback(() =>{        // ye password generator function banaya  hai ismai akhir ho kya raha hai ?
+      let pass = ""                                      // pass variable banaya jismai password daal saku 
+      let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"          // ek str variable kismai sare character hai 
+      if(numberAllowed) str += "0123456789"                               // if Number allowed hai to ise bhi str mai add kar do 
       if(charAllowed)  str += "!@#$%^&*-_+=[]{}~`"
 
-      for(let i = 1 ; i<= length ; i++){
+      for(let i = 1 ; i<= length ; i++){                                 // loop lagaya jisse random no generate karke use char mai dalunga aur pass mai vo str add karta jayunga 
         let char = Math.floor(Math.random() * str.length + 1)
         pass += str.charAt(char)
       }
 
-      setPassword(pass)
+      setPassword(pass)        
          
-    },[length , numberAllowed , charAllowed , setPassword])
+    },[length , numberAllowed , charAllowed , setPassword])      //Passing pass into setPassword ensures that:
+                                                                 //The newly generated password is stored in the React state. 
+                                                                 
 
 
-    const copyPasswordToClipboard = useCallback(() =>{
+    const copyPasswordToClipboard = useCallback(() =>{     // function for copying 
       passwordRef.current?.select();
       passwordRef.current?.setSelectionRange(0 , 999);
       window.navigator.clipboard.writeText(password)
