@@ -35,6 +35,7 @@ export default function Header() {
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
                                 <NavLink
+                                   to="/"
                                     className={({isActive})=>
                                         `block py-2 pr-4 
                                         pl-3 duration-200 ${isActive?     // ye batayega ki hum jis page mai hai vo active hai kya 
@@ -49,7 +50,62 @@ export default function Header() {
                                 >
                                     Home
                                 </NavLink>
+                            </li>   
+                            <li>
+                                <NavLink
+                                  to  = "/About"
+                                    className={({isActive})=>
+                                        `block py-2 pr-4 
+                                        pl-3 duration-200 ${isActive?     // ye batayega ki hum jis page mai hai vo active hai kya 
+                                            "text-orange-700" :  "text-gray-700"
+                                        }
+                                         border-b
+                                          border-gray-100
+                                          hover:bg-gray-50 
+                                          lg:hover:bg-transparent lg:border-0
+                                           hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    About
+                                </NavLink>
                             </li>
+                            <li>
+                                <NavLink
+                                  to  = "/contact"
+                                    className={({isActive})=>
+                                        `block py-2 pr-4 
+                                        pl-3 duration-200 ${isActive?     // ye batayega ki hum jis page mai hai vo active hai kya 
+                                            "text-orange-700" :  "text-gray-700"
+                                        }
+                                         border-b
+                                          border-gray-100
+                                          hover:bg-gray-50 
+                                          lg:hover:bg-transparent lg:border-0
+                                           hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Contact
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                  to  = "/github"
+                                    className={({isActive})=>
+                                        `block py-2 pr-4 
+                                        pl-3 duration-200 ${isActive?     // ye batayega ki hum jis page mai hai vo active hai kya 
+                                            "text-orange-700" :  "text-gray-700"
+                                        }
+                                         border-b
+                                          border-gray-100
+                                          hover:bg-gray-50 
+                                          lg:hover:bg-transparent lg:border-0
+                                           hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Github
+                                </NavLink>
+                            </li>
+
                             
                             
                         </ul>

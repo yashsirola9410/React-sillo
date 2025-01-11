@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+//OUTLET WALA CONCEPT
+
 import React from 'react'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
@@ -8,9 +11,8 @@ function Layout() {
     return (
         <>
             <Header />
-            <Outlet />
+            <Outlet />   
             <Footer />
-
 
         </>
     )
