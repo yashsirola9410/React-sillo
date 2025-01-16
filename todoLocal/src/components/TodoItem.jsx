@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { useTodo } from '../contexts'
 
 
-function TodoItem( {todo} ) {
+function TodoItem( {todo} ) {    //The TodoItem component receives a single todo item as a prop.
+
     
     const [isTodoEditable , setIsTodoEditable] = useState(false)
     const[todoMsg , setTodoMsg] = useState(todo.todo)
