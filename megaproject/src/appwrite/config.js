@@ -1,5 +1,10 @@
 import conf from '../conf/conf';
-import { Client , ID , Databases , Storage , Query } from 'appwrite';
+import { Client , ID , Databases , Storage , Query } from 'appwrite';  //{ Client, ID, Databases, Storage, Query } are imported 
+// from Appwrite to interact with its services:
+
+
+//This code is a JavaScript service class that interacts with Appwrite, a backend-as-a-service platform. 
+// The class provides functions to manage posts and files using Appwrite's database and storage services. 
 
 export class Service{
      client = new Client ;
@@ -14,8 +19,14 @@ export class Service{
        this.bucket = new Storage(this.client);
     }
 
+    // client: Creates an Appwrite client instance.
+    // databases: Will store a database instance.
+    // bucket: Will store a storage instance.
+
 
     //this is for creating the post 
+
+    // this.databases.createDocument(...) → Adds a new document (post) to the Appwrite database.
     async createPost({title , slug , content , featuredImage , status , userId}){
          try{
             return await this.databases.createDocument(
