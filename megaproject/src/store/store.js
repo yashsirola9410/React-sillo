@@ -9,7 +9,7 @@ import authSlice from './authSlice';  //authSlice → A slice (or part) of the R
 
 const store = configureStore({
     reducer : {
-        auth : authSlice ,
+        auth : authSlice ,  //What is a Reducer in Redux? : A reducer in Redux is a pure function that determines how the state should change in response to an action. It takes the current state and an action as inputs and returns the new state.
         // Todo : add more slices here for posts
     }
 });
